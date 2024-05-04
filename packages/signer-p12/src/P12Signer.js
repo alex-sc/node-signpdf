@@ -194,18 +194,20 @@ export class P12Signer extends Signer {
         // Sign in detached mode.
         p7.sign({detached: true});
 
-        const forgeSignature = p7.signers[0].signature;
+        if (this.options.tsaUrl) {
+            const forgeSignature = p7.signers[0].signature;
 
-        const timeStampToken = await tsa({
-            tsaUrl: 'http://timestamp.digicert.com/',
-            signature: forgeSignature,
-        });
+            const timeStampToken = await tsa({
+                tsaUrl: this.options.tsaUrl,
+                signature: forgeSignature,
+            });
 
-        const asn = p7.toAsn1();
-        if (timeStampToken) {
-            const attrsAsn1 = asn1.create(asn1.Class.CONTEXT_SPECIFIC, 1, true, []);
-            attrsAsn1.value.push(timestampToAsn1(timeStampToken));
-            dump(attrsAsn1, asn);
+            const asn = p7.toAsn1();
+            if (timeStampToken) {
+                const attrsAsn1 = asn1.create(asn1.Class.CONTEXT_SPECIFIC, 1, true, []);
+                attrsAsn1.value.push(timestampToAsn1(timeStampToken));
+                dump(attrsAsn1, asn);
+            }
         }
 
         return Buffer.from(forge.asn1.toDer(p7.toAsn1()).getBytes(), 'binary');

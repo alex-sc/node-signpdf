@@ -1,1 +1,1 @@
-{"version":3,"file":"P12Signer.d.ts","sourceRoot":"","sources":["../src/P12Signer.js"],"names":[],"mappings":"AAsFA;;;;GAIG;AAEH;IACI;;;OAGG;IACH,uBAHW,MAAM,GAAG,UAAU,GAAG,MAAM,sBAC5B,aAAa,EAavB;IANG;oBAdE,MAAM;2BACN,OAAO;MAiBR;IACD,UAA8D;CAyGrE;;iBA5HS,MAAM;wBACN,OAAO;;uBAxFiC,gBAAgB"}
+{"version":3,"file":"P12Signer.d.ts","sourceRoot":"","sources":["../src/P12Signer.js"],"names":[],"mappings":"AAsFA;;;;GAIG;AAEH;IACI;;;OAGG;IACH,uBAHW,MAAM,GAAG,UAAU,GAAG,MAAM,sBAC5B,aAAa,EAavB;IANG;oBAdE,MAAM;2BACN,OAAO;MAiBR;IACD,UAA8D;CA2GrE;;iBA9HS,MAAM;wBACN,OAAO;;uBAxFiC,gBAAgB"}
