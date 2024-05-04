@@ -29,6 +29,9 @@ function work() {
         .then(function (signedPdf) {
             // signedPdf is a Buffer of an electronically signed PDF. Store it.
             var targetPath = path.join(__dirname, '/../output/javascript.pdf');
+            if (!fs.existsSync(path.dirname(targetPath))) {
+                fs.mkdirSync(path.dirname(targetPath));
+            }
             fs.writeFileSync(targetPath, signedPdf);
         })
 }

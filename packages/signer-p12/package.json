@@ -50,7 +50,9 @@
         "build:types:verify": "tsd --files=index.test-d.ts"
     },
     "dependencies": {
-        "@signpdf/utils": "^3.2.4"
+        "@signpdf/utils": "^3.2.4",
+        "axios": "^1.6.8",
+        "jsrsasign": "^11.1.0"
     },
     "peerDependencies": {
         "node-forge": "^1.2.1"
